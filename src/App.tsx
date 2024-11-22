@@ -1,5 +1,6 @@
 import "./App.css";
-import FullCalendar from "@fullcalendar/react";
+// import "@fullcalendar/react/dist/vdom";
+import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import { useRef } from "react";
 
@@ -21,7 +22,8 @@ function App() {
         ref={calendarRef}
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
-        eventContent={renderEventContent}
+        // first try with commented out eventContent, later uncomment and compare the results of attached event listeners
+        // eventContent={renderEventContent}
         events={[
           { title: "event 1", date: "2024-11-21" },
           { title: "event 1", date: "2024-11-19" },
